@@ -28,13 +28,19 @@ export default function CopySiteLinkButton({ url = CAMPAIGN_URL }) {
   }
 
   return (
-    <button
-      type="button"
-      className={`step-copy-link-btn${copied ? " is-copied" : ""}`}
-      onClick={handleCopy}
-      aria-live="polite"
-    >
-      {copied ? "コピーしました！" : "このサイトのリンクをコピー"}
-    </button>
+    <div className="step-copy-link-cta">
+      <p className="step-copy-link-lead">
+        <span className="step-copy-link-arrow" aria-hidden="true" />
+        コピーしてお友達に送ろう！
+      </p>
+      <button
+        type="button"
+        className={`step-copy-link-btn${copied ? " is-copied" : ""}`}
+        onClick={handleCopy}
+        aria-live="polite"
+      >
+        {copied ? "コピーしました！" : "このサイトのリンクをコピー"}
+      </button>
+    </div>
   );
 }

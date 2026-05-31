@@ -526,9 +526,19 @@ export default function Home() {
             </details>
             <div className="trial-finale-cta-zone">
               <CampaignPeriod variant="compact" />
-              <a className="bottom-cta-frame" href="https://lin.ee/sxHqCyh" aria-label="LINE友だち追加">
-                <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
-              </a>
+              <div className="trial-line-cta">
+                <p className="trial-line-cta-lead">
+                  <span className="trial-line-cta-arrow" aria-hidden="true" />
+                  無料体験の申込はLINEから！
+                </p>
+                <a
+                  className="trial-line-cta-button"
+                  href="https://lin.ee/sxHqCyh"
+                  aria-label="LINE友だち追加して無料体験を申し込む"
+                >
+                  <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
