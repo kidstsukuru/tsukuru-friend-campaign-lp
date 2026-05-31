@@ -23,25 +23,21 @@ const steps = [
   {
     number: "1",
     text: "ページ内導線から\n公式LINEを友だち追加",
-    image: "/assets/step-phone-1.png",
     alt: "公式LINEアカウント画面"
   },
   {
     number: "2",
     text: "「紹介された生徒名」\n「希望日時」を送信",
-    image: "/assets/step-phone-2.png",
     alt: "希望日時の送信画面"
   },
   {
     number: "3",
     text: "スクールから\n日時調整後、\n確定連絡を受信",
-    image: "/assets/step-phone-3.png",
     alt: "日時確定の連絡画面"
   },
   {
     number: "4",
     text: "2回無料体験\nスタート",
-    image: "/assets/step-photo-4.png",
     alt: "体験授業を受ける生徒"
   }
 ];
