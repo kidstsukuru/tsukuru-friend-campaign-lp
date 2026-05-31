@@ -120,78 +120,123 @@ nextjs-portal {
   display: none;
 }
 
-.hero-title-mobile {
+.hero-visual {
+  --hero-photo-overlap: clamp(60px, 1vw, -3px);
+  --hero-photo-height: clamp(170px, 48vw, 220px);
+  --hero-photo-position: center 22%;
+  --hero-title-top: clamp(48px, 14vw, 58px);
+  --hero-title-side: clamp(10px, 3vw, 14px);
+  --hero-title-reserve: clamp(88px, 24vw, 120px);
+  --hero-title-width: min(94%, 352px);
+  --hero-gradient-top: rgba(255, 255, 255, 0.45);
+  --hero-gradient-mid: rgba(255, 255, 255, 0.14);
+  --hero-gradient-end: 50%;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "stage";
+  margin: 0 calc(-1 * var(--lp-gutter));
+  overflow: visible;
+  background: #fff;
+}
+
+.hero-photo,
+.hero-photo-wrap,
+.hero-title-band {
+  grid-area: stage;
+}
+
+.hero-title-band {
   position: relative;
   z-index: 5;
-  display: block;
-  width: 100%;
-  margin: 0 auto 0;
-  padding-top: clamp(48px, 14vw, 60px);
-  color: #051f66;
-  font-family: var(--font-campaign), "Hiragino Maru Gothic ProN", "Hiragino Kaku Gothic ProN", sans-serif;
-  text-align: center;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  text-shadow: none;
+  align-self: start;
+  justify-self: stretch;
+  padding: var(--hero-title-top) var(--hero-title-side) var(--hero-title-reserve);
+  background: transparent;
+  pointer-events: none;
 }
 
-.hero-title-mobile span {
-  display: block;
+.hero-photo-wrap {
+  position: relative;
+  z-index: 2;
+  align-self: stretch;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: var(--hero-photo-overlap);
+  pointer-events: none;
 }
 
-.mobile-title-small {
-  font-size: clamp(15px, 4.6cqw, 22px);
-  font-weight: 800;
-  line-height: 1.5;
-  letter-spacing: 0.06em;
-  color: #05245f;
-}
-
-.mobile-title-main {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 2px;
-  margin-top: 10px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.mobile-title-prefix,
-.mobile-title-suffix {
-  font-size: clamp(14px, 4.4cqw, 21px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: 0.04em;
-  color: #051f66;
-}
-
-.mobile-title-main b {
-  margin: 0 2px;
-  font-family: var(--font-campaign-display), var(--font-campaign), "Hiragino Maru Gothic ProN", sans-serif;
-  font-size: clamp(34px, 10.8cqw, 52px);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.04em;
-  background: linear-gradient(180deg, #0a94f0 0%, #075fc8 55%, #054aa8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 2px 0 rgba(255, 255, 255, 0.85));
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--hero-gradient-top) 0%,
+    var(--hero-gradient-mid) 26%,
+    rgba(255, 255, 255, 0) var(--hero-gradient-end)
+  );
 }
 
 .hero-photo {
   position: relative;
-  top: auto;
-  left: auto;
-  z-index: 2;
+  z-index: 1;
   display: block;
-  width: calc(100% + 2 * var(--lp-gutter));
-  max-width: none;
+  width: 100%;
+  height: var(--hero-photo-height);
+  margin: var(--hero-photo-overlap) 0 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: var(--hero-photo-position);
+}
+
+.hero-title-mobile {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-title-image {
+  display: block;
+  width: var(--hero-title-width);
+  max-width: 100%;
   height: auto;
-  margin: 12px calc(-1 * var(--lp-gutter)) 0;
-  border-radius: 0;
-  object-fit: contain;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.82));
+}
+
+.offer-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px 0 0;
+  color: #05245f;
+  font-size: clamp(10px, 2.9cqw, 12px);
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.offer-summary-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ff5b88, #ff3d70);
+  color: #fff;
+  font-size: clamp(9px, 2.6cqw, 11px);
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .offer-row {
@@ -200,75 +245,154 @@ nextjs-portal {
   left: auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(6px, 2vw, 10px);
+  align-items: stretch;
+  gap: clamp(5px, 1.6vw, 8px);
   width: 100%;
-  margin-top: 10px;
+  margin-top: 6px;
   z-index: 6;
 }
 
 .offer-card {
   position: relative;
-  height: auto;
-  min-height: clamp(76px, 22vw, 96px);
-  padding: clamp(7px, 2.2vw, 10px) clamp(6px, 2vw, 9px) clamp(6px, 1.8vw, 8px);
-  border: 3px solid #fff;
-  border-radius: clamp(13px, 4vw, 16px);
-  color: #fff;
-  text-align: center;
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.15),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 2px solid;
+  border-radius: clamp(9px, 2.8vw, 11px);
+  background: #fff;
   overflow: hidden;
 }
 
-.offer-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  background-image: repeating-linear-gradient(135deg, #fff 0 7px, transparent 7px 19px);
+.offer-card-head {
+  flex: 0 0 auto;
+  padding: 5px 4px;
+  color: #fff;
+  font-size: clamp(9px, 2.6cqw, 11px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
 }
 
-.offer-card::after {
-  display: none;
+.offer-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 4px 7px;
+  text-align: center;
 }
 
-.offer-pink {
-  background: linear-gradient(135deg, #ff4c86 0%, #f62e69 100%);
-}
-
-.offer-blue {
-  background: linear-gradient(135deg, #087bd7 0%, #075fc8 100%);
-}
-
-.offer-card p {
-  position: relative;
+.offer-lead {
   margin: 0;
-  font-size: clamp(12px, 4cqw, 17px);
+  color: #555;
+  font-size: clamp(8px, 2.3cqw, 10px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.offer-amount {
+  display: inline-block;
+  font-family: var(--font-campaign), "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: clamp(17px, 5.2cqw, 22px);
   font-weight: 900;
-  line-height: 1.1;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
-}
-
-.offer-card strong {
-  position: relative;
-  display: block;
-  margin-top: 3px;
-  font-size: clamp(20px, 7cqw, 32px);
-  line-height: 1.05;
-  font-weight: 900;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
-  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
-}
-
-.offer-card strong span {
-  color: #fff653;
-}
-
-.offer-blue strong {
-  font-size: clamp(16px, 5.7cqw, 26px);
+  line-height: 1.15;
   letter-spacing: 0;
+}
+
+.offer-unit {
+  display: inline-block;
+  margin-top: 0;
+  font-family: var(--font-campaign), "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: clamp(10px, 3cqw, 12px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.offer-value-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1.15;
+}
+
+.offer-card-body-stacked {
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 4px 6px;
+}
+
+.offer-perk {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+}
+
+.offer-perk-divider {
+  flex: 0 0 auto;
+  color: #ff3d70;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.offer-amount-sm {
+  font-size: clamp(14px, 4.2cqw, 18px);
+}
+
+.offer-unit-sm {
+  font-size: clamp(9px, 2.6cqw, 11px);
+}
+
+.offer-value-row .offer-amount-sm,
+.offer-value-row .offer-unit-sm {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.offer-card-referrer {
+  border-color: #64aeea;
+  box-shadow: 0 2px 6px rgba(8, 119, 209, 0.12);
+}
+
+.offer-card-referrer .offer-card-head {
+  background: linear-gradient(180deg, #29b0ff, #0877d1);
+}
+
+.offer-card-referrer .offer-card-body {
+  background: linear-gradient(180deg, #f5faff 0%, #fff 100%);
+}
+
+.offer-card-referrer .offer-amount,
+.offer-card-referrer .offer-unit {
+  color: #0877d1;
+}
+
+.offer-card-referee {
+  border-color: #ff8fab;
+  box-shadow: 0 2px 6px rgba(255, 61, 112, 0.12);
+}
+
+.offer-card-referee .offer-card-head {
+  background: linear-gradient(180deg, #ff7aa0, #ff3d70);
+}
+
+.offer-card-referee .offer-card-body {
+  background: linear-gradient(180deg, #fff5f8 0%, #fff 100%);
+}
+
+.offer-card-referee .offer-amount,
+.offer-card-referee .offer-unit {
+  color: #ff3d70;
 }
 
 .line-cta-shell,
@@ -283,24 +407,12 @@ nextjs-portal {
 
 .campaign-period {
   position: relative;
-  top: auto;
-  left: auto;
   z-index: 7;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  width: 100%;
-  min-height: 0;
-  margin-top: 10px;
-  padding: 10px 12px;
-  border: 2px solid #64aeea;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #fff 0%, #eef6ff 100%);
   color: #05245f;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(8, 119, 209, 0.1);
 }
 
 .campaign-period span {
@@ -324,6 +436,43 @@ nextjs-portal {
   font-weight: 900;
   letter-spacing: -0.01em;
   white-space: nowrap;
+}
+
+.campaign-period-compact {
+  flex-wrap: wrap;
+  gap: 5px;
+  width: fit-content;
+  max-width: calc(100% - var(--lp-gutter) * 2);
+  margin: clamp(14px, 4vw, 18px) auto clamp(12px, 3.5vw, 16px);
+  padding: 5px 10px;
+  border: 1.5px solid #b8daf5;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff 0%, #f3f9ff 100%);
+  box-shadow: 0 2px 6px rgba(8, 119, 209, 0.08);
+}
+
+.campaign-period-compact span {
+  padding: 3px 9px;
+  font-size: clamp(9px, 2.6cqw, 11px);
+}
+
+.campaign-period-compact strong {
+  font-size: clamp(11px, 3.2cqw, 13px);
+}
+
+.campaign-period-box {
+  top: auto;
+  left: auto;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  min-height: 0;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 2px solid #64aeea;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff 0%, #eef6ff 100%);
+  box-shadow: 0 3px 10px rgba(8, 119, 209, 0.1);
 }
 
 .line-cta-shell {
@@ -385,7 +534,7 @@ nextjs-portal {
 .benefits-lead {
   margin: 0 0 12px;
   color: #7a8499;
-  font-size: clamp(11px, 3.2cqw, 14px);
+  font-size: clamp(13px, 3.8cqw, 16px);
   font-weight: 600;
   line-height: 1.55;
   text-align: left;
@@ -402,7 +551,7 @@ nextjs-portal {
   margin: 0 0 10px;
   padding-left: 18px;
   color: #555;
-  font-size: clamp(10px, 2.9cqw, 13px);
+  font-size: clamp(12px, 3.4cqw, 15px);
   font-weight: 600;
   line-height: 1.55;
   text-align: left;
@@ -435,7 +584,7 @@ nextjs-portal {
   display: block;
   margin-bottom: 2px;
   color: #05245f;
-  font-size: 12px;
+  font-size: clamp(13px, 3.6cqw, 15px);
   font-weight: 800;
 }
 
@@ -787,9 +936,9 @@ nextjs-portal {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  width: 100%;
+  width: min(100%, 340px);
   min-height: 0;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border-radius: 10px;
   background: #fff0f4;
@@ -828,8 +977,13 @@ nextjs-portal {
 }
 
 .referee-card .presentation-block img {
+  display: block;
   width: 100%;
   height: auto;
+  max-height: clamp(150px, 40vw, 200px);
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
+  object-position: center 28%;
   border-radius: 0;
 }
 
@@ -882,7 +1036,7 @@ nextjs-portal {
   font-size: clamp(12px, 3.4cqw, 15px);
   font-weight: 700;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 }
 
 .steps-panel {
@@ -1047,22 +1201,6 @@ nextjs-portal {
   line-height: 1;
 }
 
-.step-illustration-photo {
-  overflow: hidden;
-  width: min(100%, 280px);
-  margin-inline: auto;
-  border-radius: 10px;
-  background: #edf8ed;
-}
-
-.step-illustration-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.45 / 1;
-  object-fit: cover;
-}
-
 .step-note {
   margin: 0 0 12px;
   color: #777;
@@ -1203,6 +1341,78 @@ nextjs-portal {
   font-size: clamp(14px, 4cqw, 17px);
   font-weight: 900;
   line-height: 1.2;
+}
+
+.step-laptop {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  width: min(100%, 220px);
+  margin-inline: auto;
+}
+
+.step-laptop-screen {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: 100%;
+  padding: 10px 10px 12px;
+  border: 3px solid #1f1f1f;
+  border-radius: 10px 10px 4px 4px;
+  background: linear-gradient(180deg, #fff 0%, #f4fbff 100%);
+  box-shadow: 0 4px 0 rgba(31, 31, 31, 0.12);
+}
+
+.step-scratch-block {
+  display: block;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.step-scratch-block.block-motion {
+  background: #4c97ff;
+}
+
+.step-scratch-block.block-looks {
+  background: #9966ff;
+}
+
+.step-scratch-block.block-event {
+  background: #ffbf00;
+}
+
+.step-scratch-stage {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  margin-top: 2px;
+  border: 2px solid #d8ecff;
+  border-radius: 6px;
+  background:
+    linear-gradient(#e8f4ff 1px, transparent 1px) 0 0 / 100% 13px,
+    linear-gradient(90deg, #e8f4ff 1px, transparent 1px) 0 0 / 13px 100%,
+    #fff;
+}
+
+.step-scratch-sprite {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff 0 12%, transparent 13%),
+    radial-gradient(circle at 65% 35%, #fff 0 12%, transparent 13%),
+    linear-gradient(180deg, #ff8f4c, #ff6b2c);
+  box-shadow: 0 2px 0 #e45a20;
+}
+
+.step-laptop-base {
+  display: block;
+  width: 108%;
+  height: 7px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #cfcfcf, #a8a8a8);
 }
 
 .step-phone .phone-frame {
@@ -1714,38 +1924,8 @@ nextjs-portal {
     display: none;
   }
 
-  .hero-title-mobile {
-    padding-top: 56px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-  }
-
-  .mobile-title-small {
-    font-size: clamp(16px, 4.6cqw, 20px);
-    letter-spacing: 0.07em;
-  }
-
-  .mobile-title-school {
-    display: none !important;
-  }
-
-  .mobile-title-main {
-    display: flex !important;
-  }
-
-  .mobile-title-prefix,
-  .mobile-title-suffix {
-    font-size: clamp(15px, 4.4cqw, 19px);
-  }
-
-  .mobile-title-main b {
-    font-size: clamp(38px, 10.8cqw, 46px);
-    letter-spacing: 0.05em;
-  }
-
-  .hero-photo {
-    width: calc(100% + 2 * var(--lp-gutter));
-    margin: 12px calc(-1 * var(--lp-gutter)) 0;
+  .hero-title-band {
+    padding-top: 52px;
   }
 
   .offer-row {
@@ -1758,44 +1938,38 @@ nextjs-portal {
     margin-top: 10px;
   }
 
-  .campaign-period {
+  .campaign-period-compact {
+    margin: 12px auto 14px;
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .campaign-period-compact span {
+    padding: 2px 8px;
+    font-size: clamp(9px, 2.5cqw, 10px);
+  }
+
+  .campaign-period-compact strong {
+    font-size: clamp(10px, 3cqw, 12px);
+  }
+
+  .campaign-period-box {
     gap: 5px;
     margin-top: 10px;
     padding: 9px 10px;
   }
 
-  .campaign-period span {
+  .campaign-period-box span {
     padding: 3px 10px;
     font-size: clamp(10px, 2.9cqw, 12px);
   }
 
-  .campaign-period strong {
+  .campaign-period-box strong {
     font-size: clamp(13px, 3.7cqw, 15px);
   }
 
   .offer-card {
-    height: auto;
-    min-height: 86px;
-    padding: 9px 8px 8px;
-    border-width: 3px;
-    border-radius: 15px;
-  }
-
-  .offer-card::after {
-    display: none;
-  }
-
-  .offer-card p {
-    font-size: clamp(14px, 4cqw, 16px);
-  }
-
-  .offer-card strong {
-    font-size: clamp(24px, 7cqw, 29px);
-  }
-
-  .offer-blue strong {
-    font-size: clamp(18px, 5.7cqw, 24px);
-    letter-spacing: 0;
+    min-height: 0;
   }
 
   .line-cta-shell {
@@ -1829,7 +2003,7 @@ nextjs-portal {
 
   .benefits-lead {
     margin-bottom: 10px;
-    font-size: clamp(11px, 3.2cqw, 13px);
+    font-size: clamp(12px, 3.6cqw, 15px);
   }
 
   .benefits-steps {
@@ -1839,7 +2013,7 @@ nextjs-portal {
   .benefits-step {
     margin-bottom: 8px;
     padding-left: 16px;
-    font-size: clamp(10px, 2.9cqw, 12px);
+    font-size: clamp(11px, 3.2cqw, 14px);
   }
 
   .benefits-step::before {
@@ -1848,7 +2022,7 @@ nextjs-portal {
   }
 
   .benefits-step strong {
-    font-size: clamp(10px, 2.9cqw, 12px);
+    font-size: clamp(12px, 3.4cqw, 14px);
   }
 
   .benefit-grid {
@@ -2071,47 +2245,19 @@ nextjs-portal {
     --lp-gutter-tight: 8px;
   }
 
-  .mobile-title-small {
-    font-size: clamp(14px, 5.4cqw, 18px);
-  }
-
-  .mobile-title-main {
-    flex-wrap: wrap;
-    row-gap: 2px;
-    white-space: normal;
-  }
-
-  .mobile-title-main b {
-    font-size: clamp(30px, 11cqw, 38px);
+  .hero-title-image {
+    width: 100%;
   }
 
   .offer-row {
-    gap: 6px;
+    gap: 5px;
   }
 
-  .offer-card {
-    min-height: 74px;
-    padding: 8px 6px 7px;
-    border-radius: 13px;
-  }
-
-  .offer-card p {
-    font-size: clamp(11px, 4cqw, 13px);
-  }
-
-  .offer-card strong {
-    font-size: clamp(20px, 7.1cqw, 24px);
-  }
-
-  .offer-blue strong {
-    font-size: clamp(15px, 5.6cqw, 19px);
-  }
-
-  .campaign-period {
+  .campaign-period-box {
     padding: 8px 9px;
   }
 
-  .campaign-period strong {
+  .campaign-period-box strong {
     font-size: clamp(11px, 3.5cqw, 13px);
   }
 
@@ -2139,12 +2285,8 @@ nextjs-portal {
 }
 
 @media (min-width: 430px) {
-  .mobile-title-main b {
-    font-size: clamp(40px, 10.8cqw, 52px);
-  }
-
-  .offer-card strong {
-    font-size: clamp(24px, 7cqw, 32px);
+  .hero-title-image {
+    width: 100%;
   }
 }
 

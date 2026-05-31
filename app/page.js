@@ -195,8 +195,18 @@ function StepIllustration({ type, step }) {
 
   if (type === "trial") {
     return (
-      <div className="step-illustration step-illustration-photo">
-        <img src="/assets/lesson-photo-2.png" alt={step.alt} />
+      <div className="step-illustration step-illustration-single" role="img" aria-label={step.alt}>
+        <div className="step-laptop">
+          <div className="step-laptop-screen">
+            <span className="step-scratch-block block-motion" />
+            <span className="step-scratch-block block-looks" />
+            <span className="step-scratch-block block-event" />
+            <span className="step-scratch-stage">
+              <span className="step-scratch-sprite" />
+            </span>
+          </div>
+          <span className="step-laptop-base" aria-hidden="true" />
+        </div>
       </div>
     );
   }
@@ -248,46 +258,83 @@ function StepCard({ step, variant }) {
   );
 }
 
+function CampaignPeriod({ variant = "box" }) {
+  const isCompact = variant === "compact";
+
+  return (
+    <div
+      className={`campaign-period${isCompact ? " campaign-period-compact" : " campaign-period-box"}`}
+      aria-label={isCompact ? "キャンペーン期間 2026年6月1日から7月31日まで" : undefined}
+      aria-hidden={isCompact ? undefined : true}
+    >
+      <span>キャンペーン期間</span>
+      <strong>2026年6月1日〜7月31日</strong>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="page-shell">
       <article className="lp-canvas" aria-label="プログラミングスクールツクル 夏の友達紹介キャンペーンLP">
         <section className="hero">
           <img className="logo" src="/assets/tsukuru-logo-transparent.png" alt="TSUKURU" />
-          <img className="flags-asset" src="/assets/blue-flags.png" alt="" />
-          <img className="yellow-dots-asset" src="/assets/yellow-dot-triangle.png" alt="" />
-          <img
-            className="hero-title-asset"
-            src="/assets/hero-title-graphic.png"
-            alt="お友達と一緒に楽しく学ぼう！ プログラミングスクールツクル 夏の友達紹介キャンペーン"
-          />
-          <h1 className="hero-title-mobile" aria-label="お友達と一緒に楽しく学ぼう！ 夏の友達紹介キャンペーン">
-            <span className="mobile-title-small">お友達と一緒に楽しく学ぼう！</span>
-            <span className="mobile-title-main">
-              <span className="mobile-title-prefix">夏の</span>
-              <b>友達紹介</b>
-              <span className="mobile-title-suffix">キャンペーン</span>
-            </span>
-          </h1>
-          <img className="hero-photo" src="/assets/hero-photo.png" alt="" />
+          <div className="hero-visual">
+            <img
+              className="hero-photo"
+              src="/assets/generated-hero-photo-3.png"
+              alt="プログラミング教室で楽しく学ぶお子様たち"
+            />
+            <div className="hero-photo-wrap" aria-hidden="true" />
+            <div className="hero-title-band">
+              <h1 className="hero-title-mobile">
+                <img
+                  className="hero-title-image"
+                  src="/assets/generated-title-option-1.png"
+                  alt="お友達と一緒に楽しく学ぼう！ 夏の友達紹介キャンペーン"
+                />
+              </h1>
+            </div>
+          </div>
+          <p className="offer-summary">
+            <span className="offer-summary-badge">紹介特典</span>
+            紹介した人・紹介された人、どちらもうれしい特典がもらえる！
+          </p>
           <div className="offer-row">
-            <div className="offer-card offer-pink">
-              <p>2回の授業体験が</p>
-              <strong>
-                完全<span>無料!</span>
-              </strong>
+            <div className="offer-card offer-card-referrer">
+              <div className="offer-card-head">紹介した人</div>
+              <div className="offer-card-body">
+                <p className="offer-lead">お友達が入会で</p>
+                <div className="offer-value-row">
+                  <span className="offer-amount">1ヶ月</span>
+                  <span className="offer-unit">月謝無料</span>
+                </div>
+              </div>
             </div>
-            <div className="offer-card offer-blue">
-              <p>入会後</p>
-              <strong>
-                1ヶ月月謝<span>無料!</span>
-              </strong>
+            <div className="offer-card offer-card-referee">
+              <div className="offer-card-head">紹介された人</div>
+              <div className="offer-card-body offer-card-body-stacked">
+                <div className="offer-perk">
+                  <p className="offer-lead">2回の授業体験が</p>
+                  <div className="offer-value-row">
+                    <span className="offer-amount offer-amount-sm">完全</span>
+                    <span className="offer-unit offer-unit-sm">無料!</span>
+                  </div>
+                </div>
+                <span className="offer-perk-divider" aria-hidden="true">
+                  ＋
+                </span>
+                <div className="offer-perk">
+                  <p className="offer-lead">入会後</p>
+                  <div className="offer-value-row">
+                    <span className="offer-amount offer-amount-sm">1ヶ月</span>
+                    <span className="offer-unit offer-unit-sm">月謝無料</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="campaign-period" aria-label="キャンペーン期間 2026年6月1日から7月31日まで">
-            <span>キャンペーン期間</span>
-            <strong>2026年6月1日〜7月31日</strong>
-          </div>
+          <CampaignPeriod />
         </section>
 
         <section className="benefits section-card">
@@ -378,8 +425,8 @@ export default function Home() {
                 <strong>スクラッチでゲーム制作</strong>
               </div>
               <div className="lesson-images">
-                <img src="/assets/lesson-photo-1.png" alt="スクラッチを学ぶ生徒" />
-                <img src="/assets/scratch-screen.png" alt="Scratchのゲーム画面" />
+                <img src="/assets/generated-trial-lesson-1.png" alt="スクラッチを学ぶ生徒" />
+                <img src="/assets/trial-clear-screen.png" alt="Scratchのゲーム画面" />
               </div>
             </div>
             <div className="trial-arrow" aria-hidden="true">
@@ -391,15 +438,15 @@ export default function Home() {
                 <strong>ゲームを改良して完成！</strong>
               </div>
               <div className="lesson-images">
-                <img src="/assets/lesson-photo-2.png" alt="ゲームを改良する生徒" />
-                <img src="/assets/clear-screen.png" alt="完成したゲーム画面" />
+                <img src="/assets/generated-trial-lesson-2.png" alt="ゲームを改良する生徒" />
+                <img src="/assets/trial-scratch-screen.png" alt="完成したゲーム画面" />
               </div>
             </div>
           </div>
           <div className="trial-finale">
             <p className="trial-finale-bridge">2回目の最後に</p>
             <div className="presentation-block">
-              <img src="/assets/presentation-photo.png" alt="作品を発表する生徒と講師" />
+              <img src="/assets/generated-trial-showcase.png" alt="作品を発表する生徒と講師" />
               <div className="presentation-copy">
                 <h2>作品発表・お披露目会</h2>
                 <p className="presentation-body">
@@ -427,6 +474,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <CampaignPeriod variant="compact" />
 
         <div className="sticky-line-stop" aria-hidden="true" />
       </article>
