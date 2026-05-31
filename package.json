@@ -1,5 +1,5 @@
 {
-  "name": "tsukuru-lp-reproduction",
+  "name": "tsukuru-friend-campaign-lp",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
   }
 }

@@ -8,6 +8,7 @@ out/
 # misc
 .DS_Store
 *.log
+.vercel
 
 # dev screenshots (not used in production)
 mobile-*.png
