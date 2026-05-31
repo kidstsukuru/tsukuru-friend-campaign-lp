@@ -787,8 +787,8 @@ nextjs-portal {
   min-height: 0;
   margin-top: clamp(14px, 4vw, 20px);
   padding: clamp(34px, 10vw, 40px) clamp(10px, 3.5vw, 16px) clamp(14px, 4vw, 18px);
-  border: 2px solid #ff8fab;
-  background: #fff;
+  border: none;
+  background: transparent;
 }
 
 .referee-card .pink-ribbon {
@@ -883,6 +883,20 @@ nextjs-portal {
   white-space: nowrap;
 }
 
+.trial-step-desc {
+  margin: 0 0 10px;
+  color: #555;
+  font-size: clamp(11px, 3.1cqw, 13px);
+  font-weight: 600;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.trial-step-desc strong {
+  color: #ff3d70;
+  font-weight: 800;
+}
+
 .lesson-images {
   display: grid;
   grid-template-columns: 154px 151px;
@@ -917,9 +931,9 @@ nextjs-portal {
   gap: 10px;
   margin: 0 0 12px;
   color: #ff3d70;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: clamp(15px, 4.2cqw, 20px);
+  font-weight: 900;
+  line-height: 1.15;
   text-align: center;
 }
 
@@ -1087,8 +1101,8 @@ nextjs-portal {
   background: linear-gradient(180deg, #fff0f4, #ffe4ec);
 }
 
-.steps-panel-referee .step-illustration-arrow {
-  color: #ff3d70;
+.steps-panel-referee .step-list {
+  padding-bottom: clamp(28px, 7.5vw, 36px);
 }
 
 .steps-panel-referrer {
@@ -1612,6 +1626,227 @@ nextjs-portal {
   margin-top: 24px;
 }
 
+.trial-game-heading {
+  margin: 0 0 8px;
+  color: #05245f;
+  font-size: clamp(14px, 4cqw, 17px);
+  font-weight: 900;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.trial-intro-lead,
+.trial-game-lead {
+  margin: 0 0 12px;
+  color: #5a6478;
+  font-size: clamp(11px, 3.1cqw, 13px);
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.trial-intro-lead strong,
+.trial-game-lead strong {
+  color: #0877d1;
+  font-weight: 800;
+}
+
+.trial-intro-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.trial-intro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #eef6ff;
+}
+
+.scratch-intro-icon-blocks {
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 6px;
+}
+
+.scratch-intro-icon-blocks span {
+  display: block;
+  width: 100%;
+  height: 7px;
+  border-radius: 3px;
+}
+
+.scratch-intro-icon-blocks span:nth-child(1) {
+  background: #4c97ff;
+}
+
+.scratch-intro-icon-blocks span:nth-child(2) {
+  background: #9966ff;
+}
+
+.scratch-intro-icon-blocks span:nth-child(3) {
+  background: #ffbf00;
+}
+
+.trial-intro-copy strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #05245f;
+  font-size: clamp(12px, 3.4cqw, 14px);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.trial-intro-copy p {
+  margin: 0;
+  color: #555;
+  font-size: clamp(11px, 3.1cqw, 13px);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.trial-intro-copy p strong {
+  display: inline;
+  color: #0877d1;
+  font-weight: 800;
+}
+
+.trial-intro-panel {
+  width: min(100%, 340px);
+  margin: clamp(12px, 3.5vw, 16px) auto 0;
+  overflow: hidden;
+  border: 1.5px solid #ffd0de;
+  border-radius: 10px;
+  background: #fffafb;
+}
+
+.trial-intro-panel[open] {
+  border-color: #ffb3c6;
+}
+
+.trial-intro-summary {
+  display: grid;
+  grid-template-columns: 1fr 14px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  color: #05245f;
+  font-size: clamp(11px, 3.1cqw, 13px);
+  font-weight: 800;
+  line-height: 1.4;
+  list-style: none;
+  cursor: pointer;
+}
+
+.trial-intro-summary::-webkit-details-marker {
+  display: none;
+}
+
+.trial-intro-summary-text {
+  min-width: 0;
+}
+
+.trial-intro-chevron {
+  width: 7px;
+  height: 7px;
+  margin: 0 auto;
+  border-right: 1.5px solid #ff3d70;
+  border-bottom: 1.5px solid #ff3d70;
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 200ms ease;
+}
+
+.trial-intro-panel[open] .trial-intro-chevron {
+  transform: rotate(225deg) translateY(1px);
+}
+
+.trial-intro-body {
+  padding: 0 12px 12px;
+  border-top: 1px solid #ffe0ea;
+}
+
+.trial-intro-body .trial-intro-lead {
+  margin-top: 10px;
+}
+
+.trial-game {
+  margin-bottom: clamp(18px, 4.5vw, 24px);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.trial-game-title-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+  border-radius: 8px;
+}
+
+.trial-game-video-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 9px 12px;
+  border: 1.5px solid #ff8fab;
+  border-radius: 999px;
+  background: #fff;
+  color: #ff3d70;
+  font-size: clamp(11px, 3.1cqw, 13px);
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.trial-game-video-chevron {
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.trial-section-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  color: #ff3d70;
+  font-size: clamp(13px, 3.8cqw, 15px);
+  font-weight: 900;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.trial-section-bridge::before,
+.trial-section-bridge::after {
+  content: "";
+  flex: 1;
+  max-width: 56px;
+  height: 2px;
+  background: #ffb3c6;
+}
+
+.steps-panel-referee + .trial {
+  margin-top: clamp(44px, 12vw, 60px);
+}
+
 .step-phone .phone-notch {
   position: absolute;
   top: 0;
@@ -1729,49 +1964,62 @@ nextjs-portal {
 
 .faq-panel {
   width: 100%;
-  margin-top: clamp(12px, 3.5vw, 16px);
-  margin-right: auto;
-  margin-left: auto;
-  padding: clamp(8px, 2.5vw, 10px) clamp(10px, 3vw, 12px) clamp(10px, 3vw, 14px);
-  border-radius: clamp(8px, 2.5vw, 10px);
-  background: #e2f2fe;
+  margin-top: clamp(16px, 4.5vw, 24px);
+  margin-inline: auto;
+  padding: clamp(12px, 3.5vw, 16px) clamp(6px, 2vw, 10px) clamp(16px, 4vw, 22px);
+  border-radius: 0;
+  background: transparent;
 }
 
 .faq-panel h2 {
-  margin: 0 0 8px;
-  color: #001f66;
-  font-size: clamp(20px, 6cqw, 30px);
-  line-height: 1.2;
-  font-weight: 900;
+  margin: 0 0 6px;
+  color: #333;
+  font-size: clamp(18px, 5.2cqw, 24px);
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.faq-subtitle {
+  margin: 0 0 clamp(16px, 4.5vw, 22px);
+  color: #555;
+  font-size: clamp(12px, 3.4cqw, 14px);
+  font-weight: 600;
+  line-height: 1.4;
   text-align: center;
 }
 
 .faq-list {
   display: grid;
-  gap: 8px;
+  gap: 0;
 }
 
 .faq-item {
-  overflow: hidden;
-  border: 2px solid #82c7f4;
-  border-radius: 12px;
-  background: #fff;
+  overflow: visible;
+  border: none;
+  border-bottom: 1px dashed #c8c8c8;
+  border-radius: 0;
+  background: transparent;
+}
+
+.faq-item:first-child {
+  border-top: 1px dashed #c8c8c8;
 }
 
 .faq-item[open] {
-  border-color: #0b76d1;
+  border-color: #c8c8c8;
 }
 
 .faq-question {
   display: grid;
-  grid-template-columns: clamp(22px, 6.5vw, 28px) 1fr clamp(14px, 4.5vw, 18px);
-  gap: clamp(5px, 1.8vw, 8px);
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(8px, 2.5vw, 12px);
   align-items: center;
-  padding: clamp(9px, 2.8vw, 12px) clamp(10px, 3.2vw, 14px);
-  color: #05245f;
-  font-size: clamp(12px, 3.8cqw, 16px);
-  font-weight: 800;
-  line-height: 1.35;
+  padding: clamp(14px, 4vw, 18px) clamp(4px, 1.5vw, 8px);
+  color: #333;
+  font-size: clamp(13px, 3.6cqw, 15px);
+  font-weight: 600;
+  line-height: 1.5;
   list-style: none;
   cursor: pointer;
 }
@@ -1781,9 +2029,9 @@ nextjs-portal {
 }
 
 .faq-q-mark {
-  color: #0b76d1;
-  font-size: 22px;
-  font-weight: 900;
+  color: #e60012;
+  font-size: clamp(20px, 5.5cqw, 26px);
+  font-weight: 800;
   line-height: 1;
 }
 
@@ -1792,11 +2040,12 @@ nextjs-portal {
 }
 
 .faq-chevron {
-  width: 8px;
-  height: 8px;
-  margin: 0 auto;
-  border-right: 2px solid #0b76d1;
-  border-bottom: 2px solid #0b76d1;
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  margin-right: 2px;
+  border-right: 1.5px solid #b0b0b0;
+  border-bottom: 1.5px solid #b0b0b0;
   transform: rotate(45deg) translateY(-2px);
   transition: transform 200ms ease;
 }
@@ -1806,17 +2055,162 @@ nextjs-portal {
 }
 
 .faq-answer {
-  padding: 0 14px 12px 50px;
-  color: #333;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.55;
+  padding: 0 clamp(4px, 1.5vw, 8px) clamp(14px, 4vw, 18px) clamp(32px, 8vw, 42px);
+  color: #555;
+  font-size: clamp(12px, 3.2cqw, 14px);
+  font-weight: 500;
+  line-height: 1.65;
 }
 
 .faq-answer p {
   margin: 0;
-  padding-top: 2px;
-  border-top: 1px solid #dbeaf8;
+  padding-top: 0;
+  border-top: none;
+}
+
+.terms-panel {
+  width: 100%;
+  margin: clamp(10px, 3vw, 14px) auto clamp(12px, 3.5vw, 16px);
+  padding: 0 clamp(6px, 2vw, 10px);
+}
+
+.terms-item {
+  overflow: visible;
+  border: none;
+  border-top: 1px dashed #c8c8c8;
+  border-bottom: 1px dashed #c8c8c8;
+  border-radius: 0;
+  background: transparent;
+}
+
+.terms-item[open] {
+  border-color: #c8c8c8;
+}
+
+.terms-summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(8px, 2.5vw, 12px);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(14px, 4vw, 18px) clamp(4px, 1.5vw, 8px);
+  color: #333;
+  font-size: clamp(13px, 3.6cqw, 15px);
+  font-weight: 600;
+  line-height: 1.5;
+  list-style: none;
+  cursor: pointer;
+}
+
+.terms-summary::-webkit-details-marker {
+  display: none;
+}
+
+.terms-summary-text {
+  min-width: 0;
+}
+
+.terms-chevron {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  margin-right: 2px;
+  border-right: 1.5px solid #b0b0b0;
+  border-bottom: 1.5px solid #b0b0b0;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 200ms ease;
+}
+
+.terms-item[open] .terms-chevron {
+  transform: rotate(225deg) translateY(2px);
+}
+
+.terms-body {
+  padding: 0 clamp(4px, 1.5vw, 8px) clamp(14px, 4vw, 18px);
+  color: #555;
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.terms-heading {
+  margin: 12px 0 4px;
+  color: #333;
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.terms-heading:first-child {
+  margin-top: 0;
+}
+
+.terms-body p {
+  margin: 0 0 8px;
+}
+
+.terms-body p:last-child {
+  margin-bottom: 0;
+}
+
+.lp-footer {
+  margin: clamp(24px, 6vw, 32px) calc(-1 * var(--lp-gutter)) 0;
+  padding: clamp(14px, 4vw, 18px) var(--lp-gutter) clamp(18px, 5vw, 24px);
+  border-top: 1px solid #e4eaf0;
+  background: linear-gradient(180deg, #fff 0%, #fafbfd 100%);
+}
+
+.lp-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 14px);
+  width: 100%;
+  max-width: var(--lp-max-width);
+  margin: 0 auto;
+}
+
+.lp-footer-logo {
+  display: block;
+  width: clamp(44px, 12vw, 56px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.lp-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lp-footer-label {
+  color: #5a6478;
+  font-size: clamp(10px, 2.8cqw, 12px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.lp-footer-name {
+  color: #05245f;
+  font-size: clamp(16px, 4.5cqw, 20px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.trial-finale-cta-zone {
+  margin-top: clamp(14px, 4vw, 18px);
+}
+
+.trial-finale-cta-zone .campaign-period-compact {
+  margin-top: 0;
+  margin-bottom: clamp(10px, 3vw, 14px);
+}
+
+.trial-finale-cta-zone .bottom-cta-frame {
+  min-height: 0;
+  margin: 0 auto clamp(12px, 3.5vw, 16px);
+  padding: 0;
 }
 
 .bottom-cta-frame {
@@ -1833,45 +2227,6 @@ nextjs-portal {
   width: 100%;
   max-width: none;
   height: auto;
-}
-
-.sticky-line-cta {
-  position: fixed;
-  left: 50%;
-  bottom: max(10px, env(safe-area-inset-bottom));
-  z-index: 100;
-  display: block;
-  width: min(calc(100vw - 2 * var(--lp-gutter)), var(--lp-max-width));
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, 18px);
-  transition:
-    opacity 360ms ease,
-    transform 360ms ease;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
-}
-
-.sticky-line-cta.is-visible {
-  opacity: 0.94;
-  pointer-events: auto;
-  transform: translate(-50%, 0);
-}
-
-.sticky-line-cta.is-docked {
-  position: absolute;
-  bottom: auto;
-}
-
-.sticky-line-cta img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.sticky-line-stop {
-  width: 100%;
-  height: clamp(68px, 20vw, 80px);
-  margin: clamp(16px, 4.5vw, 20px) auto clamp(20px, 6vw, 24px);
 }
 
 @media (min-width: 0px) {
@@ -2090,7 +2445,7 @@ nextjs-portal {
 
   .trial-finale-bridge {
     margin-bottom: 10px;
-    font-size: clamp(11px, 3.2cqw, 13px);
+    font-size: clamp(15px, 4.2cqw, 20px);
   }
 
   .trial-grid {
@@ -2174,36 +2529,36 @@ nextjs-portal {
   }
 
   .faq-panel {
-    padding: 9px 10px 12px;
+    padding: 14px 8px 18px;
   }
 
   .faq-panel h2 {
-    font-size: clamp(22px, 6cqw, 29px);
+    font-size: clamp(19px, 5.4cqw, 23px);
   }
 
-  .faq-item {
-    border-radius: 10px;
+  .faq-subtitle {
+    margin-bottom: 18px;
+    font-size: clamp(12px, 3.4cqw, 14px);
   }
 
   .faq-question {
-    grid-template-columns: 24px 1fr 16px;
-    gap: 6px;
-    padding: 10px 12px;
-    font-size: clamp(13px, 3.8cqw, 15px);
+    gap: 10px;
+    padding: 16px 6px;
+    font-size: clamp(13px, 3.6cqw, 15px);
   }
 
   .faq-q-mark {
-    font-size: clamp(18px, 5cqw, 22px);
+    font-size: clamp(22px, 6cqw, 26px);
   }
 
   .faq-chevron {
-    width: 16px;
-    height: 16px;
+    width: 9px;
+    height: 9px;
   }
 
   .faq-answer {
-    padding: 0 12px 10px 42px;
-    font-size: clamp(11px, 3.2cqw, 13px);
+    padding: 0 6px 16px 38px;
+    font-size: clamp(12px, 3.2cqw, 14px);
   }
 
   .faq-item strong,
@@ -2216,7 +2571,7 @@ nextjs-portal {
   .bottom-cta-frame {
     height: auto;
     min-height: 60px;
-    margin: 18px auto 92px;
+    margin: 18px auto 24px;
     padding: 0;
     border: 0;
     background: transparent;
@@ -2225,17 +2580,6 @@ nextjs-portal {
   .bottom-cta-frame img {
     width: 100%;
     max-width: none;
-  }
-
-  .sticky-line-cta {
-    bottom: max(10px, env(safe-area-inset-bottom));
-    width: min(calc(100vw - 2 * var(--lp-gutter)), var(--lp-max-width));
-  }
-
-  .sticky-line-stop {
-    width: 100%;
-    height: clamp(68px, 20vw, 80px);
-    margin: 18px auto 16px;
   }
 }
 
@@ -2295,8 +2639,8 @@ nextjs-portal {
     scroll-behavior: auto;
   }
 
-  .sticky-line-cta,
-  .faq-chevron {
+  .faq-chevron,
+  .terms-chevron {
     transition: none;
   }
 }

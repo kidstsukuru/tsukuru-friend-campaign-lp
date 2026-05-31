@@ -1,7 +1,7 @@
 import CopySiteLinkButton from "./CopySiteLinkButton";
-import StickyLineCta from "./StickyLineCta";
 
 const CAMPAIGN_SITE_URL = "https://tsukuru-friend-campaign-lp.vercel.app/";
+const TRIAL_GAME_YOUTUBE_URL = "";
 
 const faqs = [
   {
@@ -418,12 +418,41 @@ export default function Home() {
 
         <section className="trial section-card referee-card">
           <h2 className="pink-ribbon">2回の体験授業の流れ</h2>
+
+          <div className="trial-game">
+            <h3 className="trial-game-heading">体験で作るゲーム</h3>
+            <img
+              className="trial-game-title-banner"
+              src="/assets/trial-game-title-yokero.png"
+              alt="Lv.1 飛んでくる矢をよけろ！"
+            />
+            <p className="trial-game-lead">
+              キャラクター<strong>「クロスケ」</strong>を左右に動かし、上から飛んでくる矢をよけるアクションゲームです。
+            </p>
+            {TRIAL_GAME_YOUTUBE_URL ? (
+              <a
+                className="trial-game-video-link"
+                href={TRIAL_GAME_YOUTUBE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ゲームプレイ動画を見る
+                <span className="trial-game-video-chevron" aria-hidden="true" />
+              </a>
+            ) : null}
+          </div>
+
+          <p className="trial-section-bridge">2回の体験授業の流れ</p>
+
           <div className="trial-grid">
             <div className="trial-step">
               <div className="trial-title">
                 <span>1回目</span>
                 <strong>スクラッチでゲーム制作</strong>
               </div>
+              <p className="trial-step-desc">
+                ゲームの<strong>土台</strong>となるプログラムを作ります。
+              </p>
               <div className="lesson-images">
                 <img src="/assets/generated-trial-lesson-1.png" alt="スクラッチを学ぶ生徒" />
                 <img src="/assets/trial-clear-screen.png" alt="Scratchのゲーム画面" />
@@ -435,8 +464,11 @@ export default function Home() {
             <div className="trial-step">
               <div className="trial-title">
                 <span>2回目</span>
-                <strong>ゲームを改良して完成！</strong>
+                <strong>ゲームをアレンジして完成！</strong>
               </div>
+              <p className="trial-step-desc">
+                1回目のゲームを<strong>アレンジ</strong>して、自分だけの作品に仕上げます。
+              </p>
               <div className="lesson-images">
                 <img src="/assets/generated-trial-lesson-2.png" alt="ゲームを改良する生徒" />
                 <img src="/assets/trial-scratch-screen.png" alt="完成したゲーム画面" />
@@ -448,17 +480,50 @@ export default function Home() {
             <div className="presentation-block">
               <img src="/assets/generated-trial-showcase.png" alt="作品を発表する生徒と講師" />
               <div className="presentation-copy">
-                <h2>作品発表・お披露目会</h2>
+                <h2>作品発表</h2>
                 <p className="presentation-body">
-                  保護者の方もご覧いただき、お子様の成長と楽しさを感じられます。
+                  アレンジしたゲームを発表します。保護者の方もご覧いただき、お子様の成長と楽しさを感じられます。
                 </p>
               </div>
+            </div>
+            <details className="trial-intro-panel">
+              <summary className="trial-intro-summary">
+                <span className="trial-intro-summary-text">プログラミングが初めての方へ</span>
+                <span className="trial-intro-chevron" aria-hidden="true" />
+              </summary>
+              <div className="trial-intro-body">
+                <p className="trial-intro-lead">
+                  体験授業では、Scratch（スクラッチ）というソフトで<strong>ゲーム制作</strong>
+                  に挑戦します。
+                </p>
+                <div className="trial-intro-card">
+                  <span className="trial-intro-icon scratch-intro-icon-blocks" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                  <div className="trial-intro-copy">
+                    <strong>Scratch（スクラッチ）とは？</strong>
+                    <p>
+                      ブロックを並べてプログラムを作る、子ども向けのソフトです。難しいコードを書かず、
+                      <strong>パズルのように組み立てて</strong>ゲームやアニメーションが作れます。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </details>
+            <div className="trial-finale-cta-zone">
+              <CampaignPeriod variant="compact" />
+              <a className="bottom-cta-frame" href="https://lin.ee/sxHqCyh" aria-label="LINE友だち追加">
+                <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
+              </a>
             </div>
           </div>
         </section>
 
         <section className="faq-panel">
           <h2>よくある質問</h2>
+          <p className="faq-subtitle">（夏の友だち紹介キャンペーン）</p>
           <div className="faq-list">
             {faqs.map((faq) => (
               <details className="faq-item" key={faq.q}>
@@ -475,11 +540,62 @@ export default function Home() {
           </div>
         </section>
 
-        <CampaignPeriod variant="compact" />
+        <section className="terms-panel" aria-label="キャンペーン注意事項・規約">
+          <details className="terms-item">
+            <summary className="terms-summary">
+              <span className="terms-summary-text">キャンペーン注意事項・規約</span>
+              <span className="terms-chevron" aria-hidden="true" />
+            </summary>
+            <div className="terms-body">
+              <h3 className="terms-heading">キャンペーン期間</h3>
+              <p>
+                2026年6月1日〜 2026年7月31日 までのお申し込み分が対象となります。
+              </p>
 
-        <div className="sticky-line-stop" aria-hidden="true" />
+              <h3 className="terms-heading">特典の適用条件について</h3>
+              <p>
+                ご紹介者様（在籍生徒）への特典（月謝無料）は、ご紹介いただいたお友達が「1ヶ月の無料体験」を終了し、【正式に入会された場合】に適用となります。体験のみで終了した場合は適用されませんのでご了承ください。
+              </p>
+              <p>
+                月謝の無料適用は、お友達の入会が確定した翌月（または翌々月）の月謝分に充当させていただきます。
+              </p>
+              <p>
+                ご紹介人数に上限はありません。（例：2名入会で2ヶ月無料、3名入会で3ヶ月無料となります）
+              </p>
+              <p>
+                ご兄弟でのご入会や、過去に当スクールに通われていた方の「再入会」も本キャンペーンの対象となります。
+              </p>
+
+              <h3 className="terms-heading">注意事項</h3>
+              <p>
+                ご希望の曜日・時間帯のクラスが満席の場合、別の日時やクラスをご案内させていただく可能性がございます。あらかじめご了承ください。
+              </p>
+              <p>
+                本キャンペーンは、予告なく期間の変更、または終了・内容の改定を行う場合がございます。あらかじめご了承ください。
+              </p>
+
+              <h3 className="terms-heading">個人情報の取り扱いについて</h3>
+              <p>
+                お預かりした個人情報（LINEのアカウント情報、お名前等）は、本キャンペーンの特典付与、無料体験の案内、および当スクールからのご連絡にのみ使用し、適切に管理いたします。
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <footer className="lp-footer">
+          <div className="lp-footer-inner">
+            <img
+              className="lp-footer-logo"
+              src="/assets/tsukuru-logo-transparent.png"
+              alt="TSUKURU"
+            />
+            <div className="lp-footer-brand">
+              <span className="lp-footer-label">プログラミングスクール</span>
+              <strong className="lp-footer-name">ツクル</strong>
+            </div>
+          </div>
+        </footer>
       </article>
-      <StickyLineCta />
     </main>
   );
 }
