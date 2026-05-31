@@ -47,7 +47,7 @@ export default function StickyLineCta() {
           return;
         }
 
-        const bottomOffset = window.innerWidth <= 680 ? 10 : 12;
+        const bottomOffset = 10;
         const ctaHeight = cta.getBoundingClientRect().height;
         const fixedTop = window.scrollY + window.innerHeight - bottomOffset - ctaHeight;
         const stopTop = window.scrollY + stop.getBoundingClientRect().top;
