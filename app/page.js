@@ -512,6 +512,14 @@ export default function Home() {
                 </div>
               </div>
             </details>
+            <p className="trial-finale-bridge">体験終了後</p>
+            <div className="trial-enrollment-perk">
+              <p className="offer-lead">入会後</p>
+              <div className="offer-value-row">
+                <span className="offer-amount offer-amount-sm">1ヶ月</span>
+                <span className="offer-unit offer-unit-sm">月謝無料</span>
+              </div>
+            </div>
             <div className="trial-finale-cta-zone">
               <CampaignPeriod variant="compact" />
               <div className="trial-line-cta">
