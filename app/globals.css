@@ -398,6 +398,10 @@ nextjs-portal {
   color: #ff3d70;
 }
 
+.benefits-line-cta {
+  margin-top: clamp(14px, 4vw, 18px);
+}
+
 .line-cta-shell,
 .bottom-cta-frame {
   display: flex;

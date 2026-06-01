@@ -379,9 +379,19 @@ export default function Home() {
               </a>
             </article>
           </div>
-          <a className="line-cta-shell" href="https://lin.ee/sxHqCyh" aria-label="LINE友だち追加">
-            <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
-          </a>
+          <div className="trial-line-cta benefits-line-cta">
+            <p className="trial-line-cta-lead">
+              <span className="trial-line-cta-arrow" aria-hidden="true" />
+              紹介された方は、こちらから友だち追加
+            </p>
+            <a
+              className="trial-line-cta-button"
+              href="https://lin.ee/sxHqCyh"
+              aria-label="紹介された方はLINE友だち追加から無料体験を申し込む"
+            >
+              <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
+            </a>
+          </div>
         </section>
 
         <section className="steps-panel steps-panel-referrer" id="referrer-steps">
@@ -507,12 +517,12 @@ export default function Home() {
               <div className="trial-line-cta">
                 <p className="trial-line-cta-lead">
                   <span className="trial-line-cta-arrow" aria-hidden="true" />
-                  無料体験の申込はLINEから！
+                  紹介された方は、こちらから友だち追加
                 </p>
                 <a
                   className="trial-line-cta-button"
                   href="https://lin.ee/sxHqCyh"
-                  aria-label="LINE友だち追加して無料体験を申し込む"
+                  aria-label="紹介された方はLINE友だち追加から無料体験を申し込む"
                 >
                   <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
                 </a>
