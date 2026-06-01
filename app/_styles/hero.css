@@ -1,0 +1,152 @@
+.hero {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  margin-inline: calc(-1 * var(--lp-gutter));
+  padding: 14px var(--lp-gutter) 16px;
+  background: linear-gradient(180deg, #fff 0%, #fff 58%, #fffdf6 100%);
+}
+
+.logo {
+  position: absolute;
+  top: 12px;
+  left: calc(var(--lp-gutter) + 2px);
+  width: clamp(48px, 14vw, 64px);
+  height: auto;
+  z-index: 6;
+}
+
+.flags-asset {
+  display: none;
+}
+
+.yellow-dots-asset {
+  display: none;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 58px;
+  left: 151px;
+  width: 64px;
+  height: 52px;
+  background:
+    linear-gradient(#f8b800, #f8b800) 50% 0 / 5px 25px no-repeat,
+    linear-gradient(32deg, transparent 45%, #f8b800 47% 53%, transparent 55%) 8px 12px / 24px 32px no-repeat,
+    linear-gradient(-32deg, transparent 45%, #f8b800 47% 53%, transparent 55%) 34px 12px / 24px 32px no-repeat;
+  z-index: 4;
+  display: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 128px;
+  right: 25px;
+  width: 62px;
+  height: 74px;
+  opacity: 0.8;
+  background-image: radial-gradient(#f5df0a 2px, transparent 2.5px);
+  background-size: 10px 10px;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  z-index: 4;
+  display: none;
+}
+
+.hero-title-asset {
+  display: none;
+}
+
+.hero-visual {
+  --hero-photo-overlap: clamp(60px, 1vw, -3px);
+  --hero-photo-height: clamp(170px, 48vw, 220px);
+  --hero-photo-position: center 22%;
+  --hero-title-top: clamp(48px, 14vw, 58px);
+  --hero-title-side: clamp(10px, 3vw, 14px);
+  --hero-title-reserve: clamp(88px, 24vw, 120px);
+  --hero-title-width: min(94%, 352px);
+  --hero-gradient-top: rgba(255, 255, 255, 0.45);
+  --hero-gradient-mid: rgba(255, 255, 255, 0.14);
+  --hero-gradient-end: 50%;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "stage";
+  margin: 0 calc(-1 * var(--lp-gutter));
+  overflow: visible;
+  background: #fff;
+}
+
+.hero-photo,
+.hero-photo-wrap,
+.hero-title-band {
+  grid-area: stage;
+}
+
+.hero-title-band {
+  position: relative;
+  z-index: 5;
+  align-self: start;
+  justify-self: stretch;
+  padding: var(--hero-title-top) var(--hero-title-side) var(--hero-title-reserve);
+  background: transparent;
+  pointer-events: none;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  z-index: 2;
+  align-self: stretch;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: var(--hero-photo-overlap);
+  pointer-events: none;
+}
+
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--hero-gradient-top) 0%,
+    var(--hero-gradient-mid) 26%,
+    rgba(255, 255, 255, 0) var(--hero-gradient-end)
+  );
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: var(--hero-photo-height);
+  margin: var(--hero-photo-overlap) 0 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: var(--hero-photo-position);
+}
+
+.hero-title-mobile {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0;
+  text-align: center;
+}
+
+.hero-title-image {
+  display: block;
+  width: var(--hero-title-width);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.82));
+}
+

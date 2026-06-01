@@ -1,0 +1,412 @@
+@media (min-width: 0px) {
+  body {
+    background: #fffdf6;
+    overflow-x: hidden;
+  }
+
+  .page-shell {
+    display: block;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #fffdf6;
+  }
+
+  .lp-canvas {
+    width: 100%;
+    max-width: min(100vw, var(--lp-max-width));
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    transform: none;
+  }
+
+  .hero {
+    margin-inline: calc(-1 * var(--lp-gutter));
+    padding: 14px var(--lp-gutter) 16px;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .logo {
+    left: calc(var(--lp-gutter) + 2px);
+    width: clamp(48px, 14vw, 64px);
+  }
+
+  .flags-asset {
+    display: none;
+  }
+
+  .yellow-dots-asset {
+    display: none;
+  }
+
+  .hero-title-asset {
+    display: none;
+  }
+
+  .hero-title-band {
+    padding-top: 52px;
+  }
+
+  .offer-row {
+    position: relative;
+    top: auto;
+    left: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .campaign-period-compact {
+    margin: 12px auto 14px;
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  .campaign-period-compact span {
+    padding: 2px 8px;
+    font-size: clamp(13px, 3.25cqw, 15px);
+  }
+
+  .campaign-period-compact strong {
+    font-size: clamp(14px, 3.75cqw, 16px);
+  }
+
+  .campaign-period-box {
+    gap: 5px;
+    margin-top: 10px;
+    padding: 9px 10px;
+  }
+
+  .campaign-period-box span {
+    padding: 3px 10px;
+    font-size: clamp(14px, 3.65cqw, 16px);
+  }
+
+  .campaign-period-box strong {
+    font-size: clamp(16px, 4.45cqw, 18px);
+  }
+
+  .offer-card {
+    min-height: 0;
+  }
+
+  .offer-card-head {
+    padding: 8px 6px;
+    font-size: clamp(14px, 3.95cqw, 16px);
+  }
+
+  .line-cta-shell {
+    margin-top: 14px;
+  }
+
+  .line-cta-shell img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .section-card,
+  .steps-panel,
+  .faq-panel,
+  .bottom-cta-frame {
+    width: 100%;
+  }
+
+  .benefits {
+    padding: 16px 10px 14px;
+  }
+
+  .benefits-heading {
+    font-size: clamp(23px, 6.55cqw, 27px);
+  }
+
+  .benefits-heading::after {
+    width: min(200px, 62%);
+    margin-bottom: 12px;
+  }
+
+  .benefits-lead {
+    margin-bottom: 10px;
+    font-size: clamp(15px, 4.35cqw, 18px);
+  }
+
+  .benefits-steps {
+    margin-bottom: 14px;
+  }
+
+  .benefits-step {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    font-size: clamp(14px, 3.95cqw, 17px);
+  }
+
+  .benefits-step::before {
+    width: 7px;
+    height: 7px;
+  }
+
+  .benefits-step strong {
+    font-size: clamp(15px, 4.15cqw, 17px);
+  }
+
+  .benefit-grid {
+    gap: 8px;
+  }
+
+  .benefit-card {
+    min-height: 158px;
+    border-radius: 12px;
+  }
+
+  .benefit-card-head {
+    padding: 8px 6px;
+    font-size: clamp(14px, 3.95cqw, 16px);
+  }
+
+  .benefit-card-body {
+    gap: 2px;
+    padding: 6px 4px 7px;
+  }
+
+  .benefit-card-body.offer-card-body-stacked {
+    gap: 3px;
+    padding: 5px 4px 6px;
+  }
+
+  .blue-ribbon,
+  .green-ribbon,
+  .pink-ribbon {
+    min-width: 0;
+    width: min(86cqw, 520px);
+    padding: 5px 20px 7px;
+    font-size: clamp(21px, 5.75cqw, 28px);
+  }
+
+  .referee-card,
+  .green-card {
+    min-height: 0;
+    padding: 40px 14px 16px;
+  }
+
+  .referee-card .presentation-copy,
+  .green-card .presentation-copy {
+    padding: 12px 14px 14px;
+  }
+
+  .referee-card .pink-ribbon,
+  .green-card .green-ribbon {
+    width: min(72cqw, 420px);
+  }
+
+  .trial-finale {
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+
+  .trial-finale-bridge {
+    margin-bottom: 10px;
+    font-size: clamp(18px, 4.95cqw, 23px);
+  }
+
+  .trial-grid {
+    gap: 6px;
+  }
+
+  .trial-arrow {
+    height: 34px;
+  }
+
+  .trial-arrow-badge {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+  }
+
+  .trial-arrow-badge::before {
+    width: 9px;
+    height: 9px;
+    border-width: 2px;
+  }
+
+  .trial-title {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .trial-title strong {
+    font-size: clamp(17px, 4.75cqw, 21px);
+  }
+
+  .lesson-images,
+  .trial-step:last-child .lesson-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .lesson-images img {
+    height: auto;
+    aspect-ratio: 1.55 / 1;
+  }
+
+  .presentation-copy h2 {
+    font-size: clamp(25px, 7.15cqw, 31px);
+  }
+
+  .presentation-body {
+    font-size: clamp(15px, 4.15cqw, 17px);
+  }
+
+  .steps-panel {
+    border-radius: 12px;
+  }
+
+  .steps-panel-head {
+    padding: 10px 8px;
+    font-size: clamp(17px, 4.75cqw, 20px);
+  }
+
+  .steps-panel-head-long {
+    padding: 10px 12px;
+    font-size: clamp(16px, 4.35cqw, 18px);
+  }
+
+  .steps-panel .step-list {
+    padding: 12px 10px 12px;
+    gap: 12px;
+  }
+
+  .step-card-body {
+    padding: 10px 12px 14px;
+  }
+
+  .step-desc {
+    margin-bottom: 12px;
+    font-size: clamp(15px, 4.15cqw, 17px);
+  }
+
+  .step-illustration-single {
+    min-height: 108px;
+  }
+
+  .faq-panel {
+    padding: 14px 8px 18px;
+  }
+
+  .faq-panel h2 {
+    font-size: clamp(22px, 6.15cqw, 26px);
+  }
+
+  .faq-subtitle {
+    margin-bottom: 18px;
+    font-size: clamp(15px, 4.15cqw, 17px);
+  }
+
+  .faq-question {
+    gap: 10px;
+    padding: 16px 6px;
+    font-size: clamp(16px, 4.35cqw, 18px);
+  }
+
+  .faq-q-mark {
+    font-size: clamp(25px, 6.75cqw, 29px);
+  }
+
+  .faq-chevron {
+    width: 9px;
+    height: 9px;
+  }
+
+  .faq-answer {
+    padding: 0 6px 16px 38px;
+    font-size: clamp(15px, 3.95cqw, 17px);
+  }
+
+  .faq-item strong,
+  .faq-answer {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .step-desc {
+    min-width: 0;
+    word-break: keep-all;
+    line-break: strict;
+  }
+
+  .bottom-cta-frame {
+    height: auto;
+    min-height: 60px;
+    margin: 18px auto 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .bottom-cta-frame img {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 359px) {
+  :root {
+    --lp-gutter: 10px;
+    --lp-gutter-tight: 8px;
+  }
+
+  .hero-title-image {
+    width: 100%;
+  }
+
+  .offer-row {
+    gap: 5px;
+  }
+
+  .campaign-period-box {
+    padding: 8px 9px;
+  }
+
+  .campaign-period-box strong {
+    font-size: clamp(14px, 4.25cqw, 16px);
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .benefit-card {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 430px) {
+  .hero-title-image {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .faq-chevron,
+  .terms-chevron,
+  .trial-line-cta-arrow,
+  .trial-line-cta-button,
+  .trial-line-cta-button::before,
+  .step-copy-link-arrow,
+  .step-copy-link-btn,
+  .step-copy-link-btn::before {
+    transition: none;
+    animation: none;
+  }
+}
+

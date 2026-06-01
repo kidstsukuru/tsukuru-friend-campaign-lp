@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  background: #f7f7f4;
+  --lp-max-width: 480px;
+  --lp-gutter: clamp(10px, 3.2vw, 16px);
+  --lp-gutter-tight: clamp(8px, 2.6vw, 12px);
+  --lp-text-base: clamp(15px, 4.35cqw, 18px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #fffdf6;
+  overflow-x: hidden;
+  font-size: var(--lp-text-base);
+  line-height: 1.6;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    system-ui,
+    sans-serif;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+.page-shell {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #fffdf6;
+}
+
+.lp-canvas {
+  position: relative;
+  width: 100%;
+  max-width: min(100vw, var(--lp-max-width));
+  margin: 0 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  container-type: inline-size;
+  padding-inline: var(--lp-gutter);
+  background:
+    radial-gradient(circle at 12% 25%, rgba(255, 246, 204, 0.45), transparent 25%),
+    linear-gradient(180deg, #fff 0%, #fff 36%, #fffdf6 100%);
+  color: #05245f;
+}
+

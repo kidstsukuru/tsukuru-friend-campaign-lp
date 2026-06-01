@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-const CAMPAIGN_URL = "https://tsukuru-friend-campaign-lp.vercel.app/";
+import { CAMPAIGN_SITE_URL } from "../../_constants/campaignData";
 
-export default function CopySiteLinkButton({ url = CAMPAIGN_URL }) {
+export default function CopySiteLinkButton({ url = CAMPAIGN_SITE_URL }) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
