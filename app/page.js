@@ -43,6 +43,7 @@ const referrerSteps = [
       </>
     ),
     illustration: "share",
+    alt: "URLを友達に送るイメージ",
     cta: {
       type: "copy-link",
       url: CAMPAIGN_SITE_URL
@@ -56,6 +57,7 @@ const referrerSteps = [
       </>
     ),
     illustration: "reward",
+    alt: "1ヶ月分の月謝無料特典を受け取るイメージ",
     note: "※特典はお友達の入会が確定したタイミングで適用されます。"
   }
 ];
@@ -69,7 +71,7 @@ const steps = [
       </>
     ),
     illustration: "line-add",
-    alt: "公式LINE友だち追加画面",
+    alt: "LINEの連絡が届くイメージ",
     cta: {
       type: "line",
       href: "https://lin.ee/sxHqCyh",
@@ -85,7 +87,7 @@ const steps = [
       </>
     ),
     illustration: "form",
-    alt: "紹介した人の生徒名と希望日時の入力画面"
+    alt: "希望日時を選ぶイメージ",
   },
   {
     number: "3",
@@ -95,7 +97,7 @@ const steps = [
       </>
     ),
     illustration: "confirm",
-    alt: "体験日時確定の連絡画面",
+    alt: "スクールから体験日時の確定連絡が届くイメージ",
     note: "※日程はスクールからLINEでご連絡します。"
   },
   {
@@ -106,7 +108,7 @@ const steps = [
       </>
     ),
     illustration: "trial",
-    alt: "体験授業を受ける生徒"
+    alt: "体験当日のレッスン風景"
   }
 ];
 
@@ -124,101 +126,72 @@ function PhoneMockup({ children, className = "" }) {
 function StepIllustration({ type, step }) {
   if (type === "share") {
     return (
-      <div className="step-illustration step-illustration-dual" role="img" aria-label="URLを友達に送るイメージ">
-        <PhoneMockup className="phone-browser">
-          <span className="browser-bar" />
-          <span className="browser-line l1" />
-          <span className="browser-line l2" />
-          <span className="browser-highlight" />
-        </PhoneMockup>
-        <span className="step-illustration-arrow" aria-hidden="true">
-          ›
-        </span>
-        <PhoneMockup className="phone-chat">
-          <span className="chat-bubble" />
-          <span className="chat-url-line" />
-        </PhoneMockup>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/送信.png"
+          alt={step.alt ?? "URLを友達に送るイメージ"}
+        />
       </div>
     );
   }
 
   if (type === "reward") {
     return (
-      <div className="step-illustration step-illustration-single" role="img" aria-label="1ヶ月分の月謝無料">
-        <div className="step-reward-badge">
-          <span className="step-reward-label">1ヶ月</span>
-          <span className="step-reward-value">月謝無料</span>
-        </div>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/特典ゲット.png"
+          alt={step.alt ?? "1ヶ月分の月謝無料"}
+        />
       </div>
     );
   }
 
   if (type === "line-add") {
     return (
-      <div className="step-illustration step-illustration-dual" role="img" aria-label={step.alt}>
-        <PhoneMockup className="phone-lp">
-          <span className="lp-logo-dot" />
-          <span className="lp-line-btn" />
-        </PhoneMockup>
-        <span className="step-illustration-arrow" aria-hidden="true">
-          ›
-        </span>
-        <PhoneMockup className="phone-line">
-          <span className="phone-avatar" />
-          <span className="phone-card line-card" />
-          <span className="phone-bottom-bar" />
-        </PhoneMockup>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/メールが届く.png"
+          alt={step.alt ?? "公式LINE友だち追加画面"}
+        />
       </div>
     );
   }
 
   if (type === "form") {
     return (
-      <div className="step-illustration step-illustration-dual" role="img" aria-label={step.alt}>
-        <PhoneMockup className="phone-form">
-          <span className="phone-label" />
-          <span className="form-field f1" />
-          <span className="form-field f2" />
-          <span className="form-field f3 highlight" />
-        </PhoneMockup>
-        <span className="step-illustration-arrow" aria-hidden="true">
-          ›
-        </span>
-        <PhoneMockup className="phone-calendar">
-          <span className="calendar-header" />
-          <span className="calendar-grid" />
-        </PhoneMockup>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/日付を選ぶ.png"
+          alt={step.alt ?? "希望日時を選ぶイメージ"}
+        />
       </div>
     );
   }
 
   if (type === "confirm") {
     return (
-      <div className="step-illustration step-illustration-single" role="img" aria-label={step.alt}>
-        <PhoneMockup className="phone-confirm">
-          <span className="message-card" />
-          <span className="confirm-line short" />
-          <span className="confirm-line" />
-          <span className="confirm-check" />
-        </PhoneMockup>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/スクールから返信.png"
+          alt={step.alt}
+        />
       </div>
     );
   }
 
   if (type === "trial") {
     return (
-      <div className="step-illustration step-illustration-single" role="img" aria-label={step.alt}>
-        <div className="step-laptop">
-          <div className="step-laptop-screen">
-            <span className="step-scratch-block block-motion" />
-            <span className="step-scratch-block block-looks" />
-            <span className="step-scratch-block block-event" />
-            <span className="step-scratch-stage">
-              <span className="step-scratch-sprite" />
-            </span>
-          </div>
-          <span className="step-laptop-base" aria-hidden="true" />
-        </div>
+      <div className="step-illustration step-illustration-single">
+        <img
+          className="step-illustration-image"
+          src="/assets/体験当日.png"
+          alt={step.alt ?? "体験当日のレッスン風景"}
+        />
       </div>
     );
   }
@@ -368,10 +341,11 @@ export default function Home() {
             <article className="benefit-card benefit-card-referrer">
               <div className="benefit-card-head">紹介した人</div>
               <div className="benefit-card-body">
-                <p className="benefit-copy">
-                  お友達が入会で
-                  <strong>1ヶ月無料</strong>
-                </p>
+                <p className="offer-lead">お友達が入会で</p>
+                <div className="offer-value-row">
+                  <span className="offer-amount">1ヶ月</span>
+                  <span className="offer-unit">月謝無料</span>
+                </div>
               </div>
               <a className="benefit-detail-btn benefit-detail-btn-referrer" href="#referrer-steps">
                 詳細
@@ -380,19 +354,23 @@ export default function Home() {
             </article>
             <article className="benefit-card benefit-card-referee">
               <div className="benefit-card-head">紹介された人</div>
-              <div className="benefit-card-body">
-                <div className="benefit-item">
-                  <span>2回の授業体験が</span>
-                  <strong>無料</strong>
+              <div className="benefit-card-body offer-card-body-stacked">
+                <div className="offer-perk">
+                  <p className="offer-lead">2回の授業体験が</p>
+                  <div className="offer-value-row">
+                    <span className="offer-amount offer-amount-sm">完全</span>
+                    <span className="offer-unit offer-unit-sm">無料!</span>
+                  </div>
                 </div>
-                <div className="benefit-divider" aria-hidden="true">＋</div>
-                <div className="benefit-item">
-                  <span>入会後</span>
-                  <strong>
-                    1ヶ月
-                    <br />
-                    月謝無料
-                  </strong>
+                <span className="offer-perk-divider" aria-hidden="true">
+                  ＋
+                </span>
+                <div className="offer-perk">
+                  <p className="offer-lead">入会後</p>
+                  <div className="offer-value-row">
+                    <span className="offer-amount offer-amount-sm">1ヶ月</span>
+                    <span className="offer-unit offer-unit-sm">月謝無料</span>
+                  </div>
                 </div>
               </div>
               <a className="benefit-detail-btn benefit-detail-btn-referee" href="#referee-steps">

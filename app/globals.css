@@ -270,11 +270,11 @@ nextjs-portal {
 
 .offer-card-head {
   flex: 0 0 auto;
-  padding: 5px 4px;
+  padding: clamp(7px, 2.2vw, 10px) clamp(6px, 2vw, 8px);
   color: #fff;
-  font-size: clamp(13px, 3.35cqw, 15px);
-  font-weight: 800;
-  line-height: 1.15;
+  font-size: clamp(14px, 3.95cqw, 17px);
+  font-weight: 900;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -634,9 +634,14 @@ nextjs-portal {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(4px, 1.5vw, 6px);
-  padding: clamp(10px, 3vw, 14px) clamp(8px, 2.5vw, 10px) clamp(12px, 3.5vw, 16px);
+  gap: 2px;
+  padding: 6px 4px 7px;
   text-align: center;
+}
+
+.benefit-card-body.offer-card-body-stacked {
+  gap: 3px;
+  padding: 5px 4px 6px;
 }
 
 .benefit-card-referrer {
@@ -647,6 +652,11 @@ nextjs-portal {
   background: linear-gradient(180deg, #0a8ce8, #0877d1);
 }
 
+.benefit-card-referrer .offer-amount,
+.benefit-card-referrer .offer-unit {
+  color: #0877d1;
+}
+
 .benefit-card-referee {
   border-color: #ff8fab;
 }
@@ -655,41 +665,9 @@ nextjs-portal {
   background: linear-gradient(180deg, #ff5b88, #ff3d70);
 }
 
-.benefit-copy,
-.benefit-item {
-  margin: 0;
-  color: #111;
-  font-size: clamp(13.5px, 3.55cqw, 16px);
-  font-weight: 900;
-  line-height: 1.35;
-}
-
-.benefit-copy strong,
-.benefit-item strong {
-  display: block;
-  margin-top: 4px;
-  font-size: clamp(19px, 6.15cqw, 27px);
-  font-weight: 900;
-  line-height: 1.08;
-}
-
-.benefit-card-referrer .benefit-copy strong {
-  color: #0877d1;
-}
-
-.benefit-card-referee .benefit-item strong {
+.benefit-card-referee .offer-amount,
+.benefit-card-referee .offer-unit {
   color: #ff3d70;
-}
-
-.benefit-divider {
-  color: #ff3d70;
-  font-size: clamp(19px, 5.25vw, 23px);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.benefit-item span {
-  display: block;
 }
 
 .benefit-detail-btn {
@@ -1210,6 +1188,13 @@ nextjs-portal {
   min-height: 118px;
 }
 
+.step-illustration-image {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+  margin: 0 auto;
+}
+
 .step-illustration-arrow {
   flex: 0 0 auto;
   color: #0877d1;
@@ -1426,31 +1411,6 @@ nextjs-portal {
   border-top: 2px solid currentColor;
   border-right: 2px solid currentColor;
   transform: rotate(45deg) translateY(-1px);
-}
-
-.step-reward-badge {
-  display: grid;
-  gap: 4px;
-  min-width: 148px;
-  padding: 16px 20px;
-  border: 2px solid #64aeea;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #f5faff, #e8f4ff);
-  text-align: center;
-}
-
-.step-reward-label {
-  color: #0877d1;
-  font-size: clamp(25px, 7.25cqw, 31px);
-  font-weight: 900;
-  line-height: 1;
-}
-
-.step-reward-value {
-  color: #05245f;
-  font-size: clamp(17px, 4.75cqw, 20px);
-  font-weight: 900;
-  line-height: 1.2;
 }
 
 .step-laptop {
@@ -1677,36 +1637,10 @@ nextjs-portal {
   background-color: #fff;
 }
 
-.confirm-check {
-  position: absolute;
-  right: 10px;
-  bottom: 12px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #06c755;
-}
-
-.confirm-check::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 4px;
-  width: 5px;
-  height: 8px;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  transform: rotate(45deg);
-}
-
 .phone-line .phone-screen {
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9) 0 10px, transparent 11px),
     linear-gradient(135deg, #e5ffe9 0%, #bde9c5 100%);
-}
-
-.phone-confirm .phone-screen {
-  background: linear-gradient(180deg, #f8fdff 0%, #d8f4ff 100%);
 }
 
 #referrer-steps,
@@ -2018,8 +1952,7 @@ nextjs-portal {
   background: rgba(255, 255, 255, 0.75);
 }
 
-.step-phone .phone-label,
-.step-phone .message-card {
+.step-phone .phone-label {
   position: absolute;
   top: 10%;
   left: 10%;
@@ -2027,35 +1960,6 @@ nextjs-portal {
   height: 12%;
   border-radius: 3px;
   background: #eef7ff;
-}
-
-.step-phone .message-card {
-  height: 38%;
-  background: #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.13);
-}
-
-.step-phone .confirm-line {
-  position: absolute;
-  left: 16%;
-  height: 4px;
-  border-radius: 999px;
-  background: #222;
-}
-
-.step-phone .confirm-line.short {
-  top: 52%;
-  width: 42%;
-}
-
-.step-phone .message-card + .confirm-line {
-  top: 54%;
-  width: 58%;
-}
-
-.step-phone .message-card + .confirm-line + .confirm-line {
-  top: 68%;
-  width: 48%;
 }
 
 .faq-panel {
@@ -2522,6 +2426,11 @@ nextjs-portal {
     min-height: 0;
   }
 
+  .offer-card-head {
+    padding: 8px 6px;
+    font-size: clamp(14px, 3.95cqw, 16px);
+  }
+
   .line-cta-shell {
     margin-top: 14px;
   }
@@ -2590,22 +2499,13 @@ nextjs-portal {
   }
 
   .benefit-card-body {
-    gap: 5px;
-    padding: 12px 8px 14px;
+    gap: 2px;
+    padding: 6px 4px 7px;
   }
 
-  .benefit-copy,
-  .benefit-item {
-    font-size: clamp(13.5px, 3.55cqw, 16px);
-  }
-
-  .benefit-copy strong,
-  .benefit-item strong {
-    font-size: clamp(21px, 6.15cqw, 25px);
-  }
-
-  .benefit-divider {
-    font-size: 21px;
+  .benefit-card-body.offer-card-body-stacked {
+    gap: 3px;
+    padding: 5px 4px 6px;
   }
 
   .blue-ribbon,
@@ -2808,18 +2708,6 @@ nextjs-portal {
 
   .benefit-card {
     min-height: 0;
-  }
-
-  .benefit-copy strong,
-  .benefit-item strong {
-    font-size: clamp(21px, 6.95cqw, 25px);
-  }
-}
-
-@media (min-width: 390px) {
-  .benefit-copy strong,
-  .benefit-item strong {
-    font-size: clamp(21px, 6.15cqw, 27px);
   }
 }
 
