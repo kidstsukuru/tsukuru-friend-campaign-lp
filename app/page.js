@@ -129,7 +129,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/送信.png"
+          src="/assets/step-referrer-share-link.png"
           alt={step.alt ?? "URLを友達に送るイメージ"}
         />
       </div>
@@ -141,7 +141,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/特典ゲット.png"
+          src="/assets/step-referrer-reward.png"
           alt={step.alt ?? "1ヶ月分の月謝無料"}
         />
       </div>
@@ -153,7 +153,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/メールが届く.png"
+          src="/assets/step-referee-line-message.png"
           alt={step.alt ?? "公式LINE友だち追加画面"}
         />
       </div>
@@ -165,7 +165,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/日付を選ぶ.png"
+          src="/assets/step-referee-select-date.png"
           alt={step.alt ?? "希望日時を選ぶイメージ"}
         />
       </div>
@@ -177,7 +177,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/スクールから返信.png"
+          src="/assets/step-referee-school-reply.png"
           alt={step.alt}
         />
       </div>
@@ -189,7 +189,7 @@ function StepIllustration({ type, step }) {
       <div className="step-illustration step-illustration-single">
         <img
           className="step-illustration-image"
-          src="/assets/体験当日.png"
+          src="/assets/step-referee-trial-day.png"
           alt={step.alt ?? "体験当日のレッスン風景"}
         />
       </div>
@@ -221,7 +221,7 @@ function StepCard({ step, variant }) {
                 rel={step.cta.external ? "noopener noreferrer" : undefined}
                 aria-label="LINE友だち追加"
               >
-                <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
+                <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
               </a>
             </div>
           ) : step.cta.type === "copy-link" ? (
@@ -263,11 +263,11 @@ export default function Home() {
     <main className="page-shell">
       <article className="lp-canvas" aria-label="プログラミングスクールツクル 夏の友達紹介キャンペーンLP">
         <section className="hero">
-          <img className="logo" src="/assets/tsukuru-logo-transparent.png" alt="TSUKURU" />
+          <img className="logo" src="/assets/tsukuru-logo.png" alt="TSUKURU" />
           <div className="hero-visual">
             <img
               className="hero-photo"
-              src="/assets/generated-hero-photo-3.png"
+              src="/assets/hero-photo.png"
               alt="プログラミング教室で楽しく学ぶお子様たち"
             />
             <div className="hero-photo-wrap" aria-hidden="true" />
@@ -275,7 +275,7 @@ export default function Home() {
               <h1 className="hero-title-mobile">
                 <img
                   className="hero-title-image"
-                  src="/assets/generated-title-option-1.png"
+                  src="/assets/hero-title.png"
                   alt="お友達と一緒に楽しく学ぼう！ 夏の友達紹介キャンペーン"
                 />
               </h1>
@@ -380,7 +380,7 @@ export default function Home() {
             </article>
           </div>
           <a className="line-cta-shell" href="https://lin.ee/sxHqCyh" aria-label="LINE友だち追加">
-            <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
+            <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
           </a>
         </section>
 
@@ -413,7 +413,7 @@ export default function Home() {
             <h3 className="trial-game-heading">体験で作るゲーム</h3>
             <img
               className="trial-game-title-banner"
-              src="/assets/trial-game-title-yokero.png"
+              src="/assets/trial-section-title.png"
               alt="Lv.1 飛んでくる矢をよけろ！"
             />
             <p className="trial-game-lead">
@@ -444,7 +444,7 @@ export default function Home() {
                 ゲームの<strong>土台</strong>となるプログラムを作ります。
               </p>
               <div className="lesson-images">
-                <img src="/assets/generated-trial-lesson-1.png" alt="スクラッチを学ぶ生徒" />
+                <img src="/assets/trial-lesson-1.png" alt="スクラッチを学ぶ生徒" />
                 <img src="/assets/trial-clear-screen.png" alt="Scratchのゲーム画面" />
               </div>
             </div>
@@ -460,7 +460,7 @@ export default function Home() {
                 1回目のゲームを<strong>アレンジ</strong>して、自分だけの作品に仕上げます。
               </p>
               <div className="lesson-images">
-                <img src="/assets/generated-trial-lesson-2.png" alt="ゲームを改良する生徒" />
+                <img src="/assets/trial-lesson-2.png" alt="ゲームを改良する生徒" />
                 <img src="/assets/trial-scratch-screen.png" alt="完成したゲーム画面" />
               </div>
             </div>
@@ -468,7 +468,7 @@ export default function Home() {
           <div className="trial-finale">
             <p className="trial-finale-bridge">2回目の最後に</p>
             <div className="presentation-block">
-              <img src="/assets/generated-trial-showcase.png" alt="作品を発表する生徒と講師" />
+              <img src="/assets/trial-presentation.png" alt="作品を発表する生徒と講師" />
               <div className="presentation-copy">
                 <h2>作品発表</h2>
                 <p className="presentation-body">
@@ -514,7 +514,7 @@ export default function Home() {
                   href="https://lin.ee/sxHqCyh"
                   aria-label="LINE友だち追加して無料体験を申し込む"
                 >
-                  <img src="/assets/line-friend-button-trimmed.png" alt="LINE友だち追加" />
+                  <img src="/assets/line-add-friend-button.png" alt="LINE友だち追加" />
                 </a>
               </div>
             </div>
@@ -586,7 +586,7 @@ export default function Home() {
           <div className="lp-footer-inner">
             <img
               className="lp-footer-logo"
-              src="/assets/tsukuru-logo-transparent.png"
+              src="/assets/tsukuru-logo.png"
               alt="TSUKURU"
             />
             <div className="lp-footer-brand">

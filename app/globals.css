@@ -1158,6 +1158,7 @@ nextjs-portal {
 
 .step-card-body {
   padding: 12px 14px 16px;
+  container-type: inline-size;
 }
 
 .step-desc {
@@ -1166,7 +1167,16 @@ nextjs-portal {
   font-size: clamp(16px, 4.35cqw, 18px);
   font-weight: 400;
   line-height: 1.65;
-  text-align: left;
+  text-align: center;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+/* 紹介する人 STEP1：コンテナ幅に合わせて1行に収める */
+.steps-panel-referrer .step-card:first-child .step-desc {
+  font-size: clamp(10px, calc((100cqi - 0.25rem) / 27), 17px);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .step-desc strong {
@@ -2657,10 +2667,15 @@ nextjs-portal {
   }
 
   .faq-item strong,
-  .faq-answer,
-  .step-desc {
+  .faq-answer {
     min-width: 0;
     overflow-wrap: anywhere;
+  }
+
+  .step-desc {
+    min-width: 0;
+    word-break: keep-all;
+    line-break: strict;
   }
 
   .bottom-cta-frame {
