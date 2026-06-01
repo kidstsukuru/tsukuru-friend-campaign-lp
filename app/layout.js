@@ -1,5 +1,8 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Dela_Gothic_One, M_PLUS_Rounded_1c } from "next/font/google";
 import "./globals.css";
+
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const campaignFont = M_PLUS_Rounded_1c({
   weight: ["400", "700", "800", "900"],
@@ -27,7 +30,10 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ja" className={`${campaignFont.variable} ${campaignDisplayFont.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+      </body>
     </html>
   );
 }

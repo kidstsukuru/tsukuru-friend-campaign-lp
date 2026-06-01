@@ -9,6 +9,7 @@ out/
 .DS_Store
 *.log
 .vercel
+.env*.local
 
 # dev screenshots (not used in production)
 mobile-*.png
